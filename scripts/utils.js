@@ -1,4 +1,4 @@
-function setActiveSource(id) {
+function setActiveSource(id, page) {
   let element = document.getElementById(id);
 
   if (element.classList.contains("btn-primary")) {
@@ -11,4 +11,6 @@ function setActiveSource(id) {
 
     element.classList.add("btn-primary");
   }
+
+  fetchNewsItems(id, page);
 }

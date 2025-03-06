@@ -16,26 +16,28 @@
 
 <body>
     <!--Header alkaa-->
-    <div class="header">
-        <h1>Welcome to SpaceNews</h1>
-        <p>Your source on all things spaceflight - Articles, blogs, and reports out of this world</p>
+    <div class="header" role="banner">
+        <h1 id="banner-heading">Welcome to SpaceNews</h1>
+        <p aria-describedby="banner-heading">Your source on all things spaceflight - Articles, blogs, and reports out of
+            this world</p>
     </div>
 
     <!--Navigointi alkaa-->
-    <div class="container mt-2 mb-2">
+    <div class="container mt-2 mb-2" role="navigation">
         <div class="container-fluid">
             <ul class="nav nav-pills flex-row justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home planet</a>
+                    <a class="nav-link active" href="index.html" aria-label="Home planet">Home
+                        planet</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="articles.html">Articles</a>
+                    <a class="nav-link" href="articles.html" aria-label="Articles">Articles</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="blogs.html">Blogs</a>
+                    <a class="nav-link" href="blogs.html" aria-current="page" aria-label="Blogs">Blogs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="reports.html">Reports</a>
+                    <a class="nav-link" href="reports.html" aria-label="Reports">Reports</a>
                 </li>
             </ul>
         </div>
@@ -44,21 +46,22 @@
     <div class="container mt-4 mb-4">
         <div class="row">
             <div class="col-sm-4">
-                <h2>Blogs</h2>
-                <p>Here you can browse blog posts on spaceflight.</p>
+                <h2 id="blogs-heading">Blogs</h2>
+                <p aria-describedby="blogs-heading">Here you can browse blog posts on spaceflight.</p>
                 <!--Tässä käyttäjä voi valita mistä lähteestä blogit haetaan-->
                 <h3 class="mt-4">Select your source</h3>
-                <div class="btn-group-vertical">
+                <div class="btn-group-vertical" role="group" aria-label="Source selection">
                     <button type="button" id="all" class="btn mt-2 sourceSelector"
-                        onClick="setActiveSource('all', 'blogs')">All</button>
+                        onClick="setActiveSource('all', 'articles')" aria-label="Select all sources">All</button>
                     <button type="button" id="nasa" class="btn mb-2 sourceSelector"
-                        onClick="setActiveSource('nasa', 'blogs')">NASA</button>
+                        onClick="setActiveSource('nasa', 'articles')" aria-label="Select NASA sources">NASA</button>
                 </div>
-                <div class="btn-group-vertical">
+                <div class="btn-group-vertical" role="group" aria-label="Source selection">
                     <button type="button" id="esa" class="btn mt-2 sourceSelector"
-                        onClick="setActiveSource('esa', 'blogs')">ESA</button>
+                        onClick="setActiveSource('esa', 'articles')" aria-label="Select ESA sources">ESA</button>
                     <button type="button" id="boeing" class="btn mb-2 sourceSelector"
-                        onClick="setActiveSource('boeing', 'blogs')">Boeing</button>
+                        onClick="setActiveSource('boeing', 'articles')"
+                        aria-label="Select Boeing sources">Boeing</button>
                 </div>
             </div>
             <div class="col-sm-8" id="blogsColumn"></div>
@@ -66,7 +69,7 @@
     </div>
 
     <!--Footer alkaa-->
-    <div class="footer">
+    <div class="footer" role="footer">
         <p>SpaceNews</p>
     </div>
 

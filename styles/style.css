@@ -1,0 +1,21 @@
+.header {
+    background-color: rgb(135, 72, 137) !important;
+    color: rgb(255,255,255) !important;
+    background-color: rgb(135, 72, 137) !important;
+    padding: 40px !important;
+    text-align: center !important;
+}
+
+.nav-link {
+    color: rgb(98, 52, 99) !important;
+}
+
+.nav-link.active {
+    color: rgb(255,255,255) !important;
+    background-color: rgb(135, 72, 137) !important;
+}
+
+.nav-link:hover {
+    color: rgb(255,255,255) !important;
+    background-color: rgb(98, 52, 99) !important;
+}

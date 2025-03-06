@@ -19,3 +19,17 @@
     color: rgb(255,255,255) !important;
     background-color: rgb(98, 52, 99) !important;
 }
+
+.btn {
+    color: rgb(98, 52, 99) !important;
+}
+
+.btn.active {
+    color: rgb(255,255,255) !important;
+    background-color: rgb(135, 72, 137) !important;
+}
+
+.btn:hover {
+    color: rgb(255,255,255) !important;
+    background-color: rgb(98, 52, 99) !important;
+}

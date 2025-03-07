@@ -47,7 +47,7 @@ function fetchNewsItems(selectedSource, page) {
     newsSource = `news_site=${selectedSource.replace(" ", "")}&`; // esim. nasa&
   }
 
-  const URL = `https://api.spaceflightnewsapi.net/v4/${page}/?${newsSource}ordering=-published_at`;
+  const URL = `https://api.spaceflightnewsapi.net/v4/${page}/?${newsSource}ordering=-published_at&limit=100`;
 
   // Haetaan JSON-tietue osoitteesta GET-http-pyynnöllä
   fetch(URL)

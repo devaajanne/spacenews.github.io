@@ -1,13 +1,17 @@
 function generateSourceList(data, page) {
+  // Aletaan luoda elementtiä, jossa on dropdown-menun itemit
   let sourceList = `<div>`;
   sourceList += `<div class="btn-group-vertical" role="group" aria-label="Source selection">`;
   sourceList += `<button type="button" id="all" class="btn mt-2 sourceSelector" onClick="setActiveSource('all', '${page}')" aria-label="Select all sources">All</button>`;
 
+  // Haetaan uutislähde-JSONista kaikki uutislähteet
   for (let i = 0; i < data.news_sites.length; i++) {
     let newsSite = `${data.news_sites[i]}`;
     sourceList += `<button type="button" id='${newsSite}' class="btn sourceSelector" onClick="setActiveSource('${newsSite}', '${page}')" aria-label="Select ${data.news_sites[i]} as source">${data.news_sites[i]}</button>`;
   }
   sourceList += `</div>`;
+
+  // Lopuksi syötetään kaikki lähteet dropdown-menuun
   document.getElementById("sourceListDropdown").innerHTML = sourceList;
 }
 
@@ -21,10 +25,12 @@ function fetchSources(page) {
     .then(function (response) {
       return response.json();
     })
+
     // JSON-objekti syötetään generateSourceList-funktiolle, joka luo lähdelistauksen
     .then(function (responseJSON) {
       generateSourceList(responseJSON, page);
     })
+
     // Jos tapahtuu virhe, näytetään virheilmoitus
     .catch(function (error) {
       let fetchError = `<div class="card mb-4">`;

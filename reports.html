@@ -18,6 +18,7 @@
 <body>
     <!--wrapper alkaa-->
     <div class="wrapper">
+
         <!--pageContent alkaa-->
         <div class="pageContent">
 
@@ -51,25 +52,32 @@
                 </div>
             </div>
 
+            <!--Raporttisivun sisältö alkaa-->
             <div class="container mt-4 mb-4">
                 <div class="row">
+
+                    <!--Tässä käyttäjä voi valita alasvetovalikosta mistä lähteestä raportit haetaan-->
                     <div class="col-sm-4 text-center">
                         <h2 id="reports-heading">Reports</h2>
                         <p aria-describedby="reports-heading">Here you can browse reports on spaceflight.</p>
-                        <!--Tässä käyttäjä voi valita mistä lähteestä raportit haetaan-->
                         <script>fetchSources("reports")</script>
                         <button type="button" class="btn active dropdown-toggle" data-bs-toggle="dropdown">
                             Select your source
                         </button>
                         <div class=dropdown-menu id="sourceListDropdown"></div>
                     </div>
+
+                    <!--Tässä näytetään raportit käyttäjän valitsemasta lähteestä-->
                     <div class="col-sm-8 overflow-auto" id="reportsColumn"></div>
                 </div>
             </div>
+            <!--Artikkelisivun sisältö loppuu-->
+
         </div>
         <!--pageContent loppuu-->
 
         <!--Footer alkaa-->
+        <!--Footer on erillään pageContentista, jotta se on kiinnitetty sivun alaosaan-->
         <div class="footer">
             <p>SpaceNews</p>
         </div>

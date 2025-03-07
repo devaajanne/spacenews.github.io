@@ -18,8 +18,10 @@
 <body>
     <!--wrapper alkaa-->
     <div class="wrapper">
+
         <!--pageContent alkaa-->
         <div class="pageContent">
+
             <!--Header alkaa-->
             <div class="header" role="banner">
                 <h1 id="banner-heading">Welcome to SpaceNews</h1>
@@ -50,26 +52,32 @@
                 </div>
             </div>
 
+            <!--Artikkelisivun sisältö alkaa-->
             <div class="container mt-4 mb-4">
                 <div class="row">
+
+                    <!--Tässä käyttäjä voi valita alasvetovalikosta mistä lähteestä artikkelit haetaan-->
                     <div class="col-sm-4 text-center">
                         <h2 id="articles-heading">Articles</h2>
                         <p aria-describedby="articles-heading">Here you can browse articles on spaceflight.</p>
-                        <!--Tässä käyttäjä voi valita mistä lähteestä artikkelit haetaan-->
                         <script>fetchSources("articles")</script>
                         <button type="button" class="btn active dropdown-toggle" data-bs-toggle="dropdown">
                             Select your source
                         </button>
                         <div class=dropdown-menu id="sourceListDropdown"></div>
                     </div>
+
+                    <!--Tässä näytetään artikkelit käyttäjän valitsemasta lähteestä-->
                     <div class="col-sm-8 overflow-auto" id="articlesColumn"></div>
                 </div>
             </div>
+            <!--Artikkelisivun sisältö loppuu-->
 
         </div>
         <!--pageContent loppuu-->
 
         <!--Footer alkaa-->
+        <!--Footer on erillään pageContentista, jotta se on kiinnitetty sivun alaosaan-->
         <div class="footer">
             <p>SpaceNews</p>
         </div>

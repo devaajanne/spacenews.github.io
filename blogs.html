@@ -51,25 +51,33 @@
                 </div>
             </div>
 
+            <!--Blogisivun sisältö alkaa -->
             <div class="container mt-4 mb-4">
                 <div class="row">
+
+                    <!--Tässä käyttäjä voi valita alasvetovalikosta mistä lähteestä blogit haetaan-->
                     <div class="col-sm-4 text-center">
                         <h2 id="blogs-heading">Blogs</h2>
                         <p aria-describedby="blogs-heading">Here you can browse blog posts on spaceflight.</p>
-                        <!--Tässä käyttäjä voi valita mistä lähteestä blogit haetaan-->
                         <script>fetchSources("blogs")</script>
                         <button type="button" class="btn active dropdown-toggle" data-bs-toggle="dropdown">
                             Select your source
                         </button>
                         <div class=dropdown-menu id="sourceListDropdown"></div>
                     </div>
+
+                    <!--Tässä näytetään blogit käyttäjän valitsemasta lähteestä-->
                     <div class="col-sm-8 overflow-auto" id="blogsColumn"></div>
                 </div>
+
             </div>
+            <!--Blogisivun sisältö loppuu-->
+
         </div>
         <!--pageContent loppuu-->
 
         <!--Footer alkaa-->
+        <!--Footer on erillään pageContentista, jotta se on kiinnitetty sivun alaosaan-->
         <div class="footer">
             <p>SpaceNews</p>
         </div>

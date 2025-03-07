@@ -74,3 +74,8 @@ a:hover {
   justify-content: center;
   height: 40px;
 }
+
+#articlesColumn, #blogsColumn, #reportsColumn {
+  max-height: 65vh;
+  overflow-y: auto;
+}

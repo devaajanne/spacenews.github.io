@@ -20,7 +20,6 @@ function showNewsItems(data, page, id) {
         -1
       )}</a></div>`;
       newsItems += `</div>`;
-      newsItems += `<button class="btn active" onclick="location.href='#banner-heading'">Back to top</button>`;
     }
   }
 
@@ -36,7 +35,7 @@ function fetchNewsItems(id, page) {
     source = `news_site=${id.replace(" ", "")}&`;
   }
 
-  const URL = `https://api.spaceflightnewsapi.net/v4/${page}/?${source}ordering=-published_at&limit=5`;
+  const URL = `https://api.spaceflightnewsapi.net/v4/${page}/?${source}ordering=-published_at`;
 
   // Haetaan JSON-tietue osoitteesta GET-http-pyynnöllä
   fetch(URL)

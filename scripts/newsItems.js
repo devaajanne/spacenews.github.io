@@ -20,6 +20,7 @@ function showNewsItems(data, page) {
         -1
       )}</a></div>`;
       newsItems += `</div>`;
+      newsItems += `<button class="btn active" id="buttonLink" onclick="location.href='#banner-heading'">Back to top</button>`;
     }
   }
 

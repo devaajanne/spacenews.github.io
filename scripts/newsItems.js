@@ -8,6 +8,10 @@ function showNewsItems(data, page, id) {
     newsItems += `</div>`;
   } else {
     for (let i = 0; i < data.results.length; i++) {
+      // Hyppää yli ne uutiset, joissa ei ole tekstiä
+      if (data.results[i].summary === "") {
+        continue;
+      }
       newsItems += `<div class="card mb-2 mt-2">`;
       newsItems += `<div class="card-header"><h5>${data.results[i].title}</h5></div>`;
       newsItems += `<div class="card-header">By ${data.results[i].news_site} on ${dayjs(

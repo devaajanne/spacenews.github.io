@@ -28,24 +28,15 @@ function showNewsItems(data, page) {
 
 function fetchNewsItems(id, page) {
   // Aluksi luodaan URL josta pyydetään GET-pyynnöllä data
+  console.log(id);
   let source;
-
-  switch (id) {
-    case "all":
-      source = "";
-      break;
-    case "nasa":
-      source = "news_site=NASA&";
-      break;
-    case "esa":
-      source = "news_site=ESA&";
-      break;
-    case "boeing":
-      source = "news_site=Boeing&";
-      break;
+  if (id === "all") {
+    source = "";
+  } else {
+    source = `news_site=${id}&`;
   }
 
-  const URL = `https://api.spaceflightnewsapi.net/v4/${page}/?${source}ordering=-published_at`;
+  const URL = `https://api.spaceflightnewsapi.net/v4/${page}/?${source}ordering=-published_at&limit=5`;
 
   // Haetaan JSON-tietue osoitteesta GET-http-pyynnöllä
   fetch(URL)

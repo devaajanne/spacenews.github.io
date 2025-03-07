@@ -2,11 +2,13 @@ body, html {
   height: 100%;
   margin: 0;
 }
+
 .wrapper {
   min-height: 100%;
   display: flex;
   flex-direction: column;
 }
+
 .pageContent {
   flex: 1;
 }
@@ -81,30 +83,30 @@ a:hover {
 }
 
 .dropdown-menu {
-  max-height: 50vh; /* Adjust the height as needed */
+  max-height: 50vh;
   overflow-y: auto;
 }
 
 @media (max-width: 1200px) {
   .dropdown-menu {
-        max-height: 180px; /* Adjust height for medium screens */
+        max-height: 180px;
     }
 }
 
 @media (max-width: 992px) {
   .dropdown-menu {
-        max-height: 160px; /* Adjust height for small screens */
+        max-height: 160px;
     }
 }
 
 @media (max-width: 768px) {
   .dropdown-menu {
-        max-height: 140px; /* Adjust height for extra small screens */
+        max-height: 140px;
     }
 }
 
 @media (max-width: 576px) {
   .dropdown-menu{
-        max-height: 120px; /* Adjust height for very small screens */
+        max-height: 120px;
     }
 }

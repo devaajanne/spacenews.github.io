@@ -12,6 +12,7 @@
     <script>dayjs().format()</script>
     <script src="scripts/utils.js"></script>
     <script src="scripts/newsItems.js"></script>
+    <script src="scripts/sources.js"></script>
 </head>
 
 <body>
@@ -56,21 +57,11 @@
                         <h2 id="reports-heading">Reports</h2>
                         <p aria-describedby="reports-heading">Here you can browse reports on spaceflight.</p>
                         <!--Tässä käyttäjä voi valita mistä lähteestä raportit haetaan-->
-                        <h3 class="mt-4">Select your source</h3>
-                        <div class="btn-group-vertical" role="group" aria-label="Source selection">
-                            <button type="button" id="all" class="btn mt-2 sourceSelector"
-                                onClick="setActiveSource('all', 'reports')" aria-label="Select all sources">All</button>
-                            <button type="button" id="nasa" class="btn mb-2 sourceSelector"
-                                onClick="setActiveSource('nasa', 'reports')"
-                                aria-label="Select NASA sources">NASA</button>
-                        </div>
-                        <div class="btn-group-vertical" role="group" aria-label="Source selection">
-                            <button type="button" id="esa" class="btn mt-2 sourceSelector"
-                                onClick="setActiveSource('esa', 'reports')" aria-label="Select ESA sources">ESA</button>
-                            <button type="button" id="boeing" class="btn mb-2 sourceSelector"
-                                onClick="setActiveSource('boeing', 'reports')"
-                                aria-label="Select Boeing sources">Boeing</button>
-                        </div>
+                        <script>fetchSources("reports")</script>
+                        <button type="button" class="btn active dropdown-toggle" data-bs-toggle="dropdown">
+                            Select your source
+                        </button>
+                        <div class=dropdown-menu id="sourceListDropdown"></div>
                     </div>
                     <div class="col-sm-8" id="reportsColumn"></div>
                 </div>

@@ -1,9 +1,9 @@
-function showNewsItems(data, page, id) {
+function showNewsItems(data, page, selectedSource) {
   let newsItems = "";
   if (data.count === 0) {
     newsItems += `<div class="card mb-2 mt-2">`;
     newsItems += `<div class="card-header"><h5>Sorry!</h5></div>`;
-    newsItems += `<div class="card-body">No ${page} from ${id} found.</div>`;
+    newsItems += `<div class="card-body">No ${page} from ${selectedSource} found.</div>`;
     newsItems += `<div class="card-footer">Try again with another source.</div>`;
     newsItems += `</div>`;
   } else {
@@ -30,16 +30,16 @@ function showNewsItems(data, page, id) {
   document.getElementById(`${page}Column`).innerHTML = newsItems;
 }
 
-function fetchNewsItems(id, page) {
+function fetchNewsItems(selectedSource, page) {
   // Aluksi luodaan URL josta pyydetään GET-pyynnöllä data
-  let source;
-  if (id === "all") {
-    source = "";
+  let newsSource;
+  if (selectedSource === "all") {
+    newsSource = "";
   } else {
-    source = `news_site=${id.replace(" ", "")}&`;
+    newsSource = `news_site=${selectedSource.replace(" ", "")}&`;
   }
 
-  const URL = `https://api.spaceflightnewsapi.net/v4/${page}/?${source}ordering=-published_at`;
+  const URL = `https://api.spaceflightnewsapi.net/v4/${page}/?${newsSource}ordering=-published_at`;
 
   // Haetaan JSON-tietue osoitteesta GET-http-pyynnöllä
   fetch(URL)
@@ -49,7 +49,7 @@ function fetchNewsItems(id, page) {
     })
     // JSON-objekti syötetään showNewsItems-funktiolle, joka esittää objektin sisällön
     .then(function (responseJSON) {
-      showNewsItems(responseJSON, page, id);
+      showNewsItems(responseJSON, page, selectedSource);
     })
     // Jos tapahtuu virhe, näytetään virheilmoitus
     .catch(function (error) {

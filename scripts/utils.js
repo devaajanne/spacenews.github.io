@@ -1,5 +1,5 @@
-function setActiveSource(id, page) {
-  let element = document.getElementById(id);
+function setActiveSource(selectedSource, page) {
+  let element = document.getElementById(selectedSource);
 
   if (element.classList.contains("active")) {
     element.classList.remove("active");
@@ -12,5 +12,5 @@ function setActiveSource(id, page) {
     element.classList.add("active");
   }
 
-  fetchNewsItems(id, page);
+  fetchNewsItems(selectedSource, page);
 }

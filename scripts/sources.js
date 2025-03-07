@@ -4,7 +4,7 @@ function generateSourceList(data, page) {
     sourceList += `<button type="button" id="all" class="btn mt-2 sourceSelector" onClick="setActiveSource('all', '${page}')" aria-label="Select all sources">All</button>`
 
     for (let i = 0; i< data.news_sites.length; i++) {
-        let newsSite = `${data.news_sites[i].replace(" ", "")}`
+        let newsSite = `${data.news_sites[i]}`
         sourceList += `<button type="button" id='${newsSite}' class="btn sourceSelector" onClick="setActiveSource('${newsSite}', '${page}')" aria-label="Select ${data.news_sites[i]} as source">${data.news_sites[i]}</button>`
     }
     sourceList += `</div>`

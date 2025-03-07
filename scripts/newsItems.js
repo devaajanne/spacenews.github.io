@@ -1,9 +1,9 @@
-function showNewsItems(data, page) {
+function showNewsItems(data, page, id) {
   let newsItems = "";
   if (data.count === 0) {
     newsItems += `<div class="card mb-2 mt-2">`;
     newsItems += `<div class="card-header"><h5>Sorry!</h5></div>`;
-    newsItems += `<div class="card-body">No ${page} found.</div>`;
+    newsItems += `<div class="card-body">No ${page} from ${id} found.</div>`;
     newsItems += `<div class="card-footer">Try again with another source.</div>`;
     newsItems += `</div>`;
   } else {
@@ -29,12 +29,11 @@ function showNewsItems(data, page) {
 
 function fetchNewsItems(id, page) {
   // Aluksi luodaan URL josta pyydetään GET-pyynnöllä data
-  console.log(id);
   let source;
   if (id === "all") {
     source = "";
   } else {
-    source = `news_site=${id}&`;
+    source = `news_site=${id.replace(" ", "")}&`;
   }
 
   const URL = `https://api.spaceflightnewsapi.net/v4/${page}/?${source}ordering=-published_at&limit=5`;
@@ -47,13 +46,13 @@ function fetchNewsItems(id, page) {
     })
     // JSON-objekti syötetään showNewsItems-funktiolle, joka esittää objektin sisällön
     .then(function (responseJSON) {
-      showNewsItems(responseJSON, page);
+      showNewsItems(responseJSON, page, id);
     })
     // Jos tapahtuu virhe, näytetään virheilmoitus
     .catch(function (error) {
       let fetchError = `<div class="card mb-4">`;
       fetchError += `<div class="card-header"><h5>Sorry!</h5></div>`;
-      fetchError += `<div class="card-body">Could not find any ${page}.</div>`;
+      fetchError += `<div class="card-body">Could not find any ${page}}.</div>`;
       fetchError += `</div>`;
       document.getElementById(`${page}Column`).innerHTML = fetchError;
     });

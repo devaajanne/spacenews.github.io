@@ -1,14 +1,14 @@
 function showNewsItems(data, page) {
   let newsItems = "";
   if (data.count === 0) {
-    newsItems += `<div class="card mb-4">`;
+    newsItems += `<div class="card mb-2 mt-2">`;
     newsItems += `<div class="card-header"><h5>Sorry!</h5></div>`;
     newsItems += `<div class="card-body">No ${page} found.</div>`;
     newsItems += `<div class="card-footer">Try again with another source.</div>`;
     newsItems += `</div>`;
   } else {
     for (let i = 0; i < data.results.length; i++) {
-      newsItems += `<div class="card mb-4">`;
+      newsItems += `<div class="card mb-2 mt-2">`;
       newsItems += `<div class="card-header"><h5>${data.results[i].title}</h5></div>`;
       newsItems += `<div class="card-header">By ${data.results[i].news_site} on ${dayjs(
         data.results[i].published_at
@@ -20,7 +20,7 @@ function showNewsItems(data, page) {
         -1
       )}</a></div>`;
       newsItems += `</div>`;
-      newsItems += `<button class="btn active" id="buttonLink" onclick="location.href='#banner-heading'">Back to top</button>`;
+      newsItems += `<button class="btn active" onclick="location.href='#banner-heading'">Back to top</button>`;
     }
   }
 
